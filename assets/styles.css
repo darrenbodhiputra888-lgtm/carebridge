@@ -275,7 +275,11 @@ a.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(160,120,90
   padding:16px 4px; border-bottom:1px solid var(--gold-soft);
 }
 .row span{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-2); }
-.row a, .row b{ font-family:var(--display); font-size:22px; color:var(--gold-deep); text-decoration:none; font-weight:400; }
+.row a, .row b{
+  font-family:var(--display); font-size:22px; color:var(--gold-deep);
+  text-decoration:none; font-weight:400;
+  text-align:right; overflow-wrap:anywhere;
+}
 .row a:hover{ color:var(--pink-deep); }
 
 /* ---------- Back link ---------- */
@@ -315,6 +319,8 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .topbar{ justify-content:center; text-align:center; }
   nav.mainnav{ justify-content:center; gap:18px; }
   .brandmark .seal{ height:50px; }
+  .row{ flex-wrap:wrap; gap:4px 14px; }
+  .row a, .row b{ font-size:19px; }
 }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }

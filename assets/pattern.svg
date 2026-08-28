@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <g fill="none" stroke="#EBBBCB" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tiered cake stand -->
+    <path d="M34 60c0-10 8-18 18-18s18 8 18 18"/>
+    <rect x="26" y="60" width="52" height="11" rx="3"/>
+    <rect x="33" y="71" width="38" height="14" rx="3"/>
+    <path d="M52 85v11"/><path d="M38 100h28"/>
+    <path d="M44 42c2-5 6-7 8-9 2 2 6 4 8 9"/>
+
+    <!-- teapot -->
+    <path d="M182 58c0-11 9-19 20-19s20 8 20 19-9 19-20 19-20-8-20-19z"/>
+    <path d="M222 62c7-2 11 2 11 7s-5 8-10 7"/>
+    <path d="M182 60c-6 1-10-3-9-8"/>
+    <path d="M196 39c2-6 8-8 12-3"/>
+    <path d="M188 77h28"/>
+
+    <!-- rose -->
+    <path d="M128 150c-6 0-11 5-11 11s5 10 11 10 11-4 11-10-5-11-11-11z"/>
+    <path d="M124 158c2-3 6-3 8 0"/>
+    <path d="M128 171v16"/>
+    <path d="M128 178c-6-1-10-5-11-11"/>
+    <path d="M128 183c6-1 11-5 12-11"/>
+
+    <!-- bow -->
+    <path d="M28 178c-8-8-18-6-18 3s10 11 18 3z"/>
+    <path d="M28 184c8-8 18-6 18 3s-10 11-18 3z"/>
+    <path d="M28 178v6"/>
+
+    <!-- little house -->
+    <path d="M198 176l18-14 18 14"/>
+    <path d="M203 176v22h26v-22"/>
+    <rect x="212" y="185" width="9" height="13" rx="2"/>
+
+    <!-- flourishes -->
+    <path d="M78 224c7-9 16-9 22 0 6-9 15-9 22 0"/>
+    <path d="M6 118c9-7 18-7 26 0"/>
+    <path d="M228 118c-9-7-18-7-26 0"/>
+    <path d="M150 96c5-6 12-6 17 0"/>
+    <path d="M84 12c5-6 12-6 17 0"/>
+  </g>
+</svg>

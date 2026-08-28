@@ -250,6 +250,29 @@ a.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(160,120,90
 .person .role{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-2); margin:4px 0 10px; }
 .person p{ margin:0; font-size:16px; color:var(--ink-2); }
 
+/* ---------- Archive (BHP gallery) ---------- */
+.archive{
+  display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  margin-top:30px;
+}
+.arch{
+  background:var(--cream-2);
+  border:1px solid var(--gold-soft);
+  border-radius:20px; overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.arch img{
+  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  border-bottom:1px solid var(--gold-soft);
+}
+.arch-body{ padding:22px 24px 26px; display:flex; flex-direction:column; gap:8px; }
+.arch h3{
+  font-family:var(--display); font-weight:400; font-size:25px;
+  margin:0; color:var(--gold-deep); letter-spacing:.02em;
+}
+.arch p{ margin:0; font-size:16px; color:var(--ink-2); }
+
 /* ---------- Events ---------- */
 .event{
   display:grid; grid-template-columns:118px 1fr; gap:24px;

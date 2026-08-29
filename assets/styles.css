@@ -313,14 +313,15 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 
 /* ---------- Events ---------- */
 .event{
-  display:grid; grid-template-columns:118px 1fr; gap:24px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:11px;
   border:1px solid var(--gold-soft); border-radius:20px;
-  background:var(--cream-2); padding:24px 26px; margin-bottom:18px;
+  background:var(--cream-2); padding:26px 28px; margin-bottom:18px;
 }
-.event .when{ text-align:center; border-right:1px solid var(--gold-soft); padding-right:18px; }
-.event .when b{ display:block; font-family:var(--display); font-size:34px; color:var(--gold-deep); line-height:1.05; }
-.event .when span{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-2); }
-.event h3{ font-family:var(--display); font-weight:400; font-size:26px; margin:0 0 6px; color:var(--gold-deep); }
+.event h3{
+  font-family:var(--display); font-weight:400; font-size:28px;
+  margin:0; color:var(--gold-deep); letter-spacing:.02em; line-height:1.15;
+}
+.event .tag{ margin-bottom:0; }
 .event p{ margin:0; color:var(--ink-2); font-size:17px; }
 .tag{
   display:inline-block; font-size:11px;
@@ -372,8 +373,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .trio{ grid-template-columns:1fr; }
   .trio > a{ border-right:0; border-bottom:1px solid var(--gold-soft); }
   .trio > a:last-child{ border-bottom:0; }
-  .event{ grid-template-columns:1fr; }
-  .event .when{ border-right:0; border-bottom:1px solid var(--gold-soft); padding:0 0 12px; text-align:left; }
+  .event{ padding:22px 22px; }
   footer.foot{ padding:26px 24px 30px; }
   .shell{ margin:14px 10px; }
   body{ font-size:18px; }

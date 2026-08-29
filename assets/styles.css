@@ -227,6 +227,7 @@ a.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(160,120,90
 .stat b{
   display:block; font-family:var(--display); font-weight:400;
   font-size:44px; color:var(--gold-deep); line-height:1;
+  font-variant-numeric:tabular-nums;
 }
 .stat b.sm{ font-size:27px; line-height:1.2; }
 .stat span{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-2); }

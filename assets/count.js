@@ -22,19 +22,26 @@
     var duration = 1400;
     var start = null;
 
+    // Only zero it out at the moment it starts animating, so any failure
+    // below leaves the real number on screen rather than a stuck "0".
+    render(el, 0);
+
+    // Safety net: if rAF is throttled and never finishes, snap to the value.
+    var guard = setTimeout(function () { render(el, target); }, duration + 800);
+
     function step(now) {
       if (start === null) start = now;
       var p = Math.min(1, (now - start) / duration);
       var eased = 1 - Math.pow(1 - p, 3);
       render(el, Math.round(target * eased));
-      if (p < 1) requestAnimationFrame(step);
-      else render(el, target);
+      if (p < 1) {
+        requestAnimationFrame(step);
+      } else {
+        clearTimeout(guard);
+        render(el, target);
+      }
     }
     requestAnimationFrame(step);
-  }
-
-  if (!calm) {
-    els.forEach(function (el) { render(el, 0); });
   }
 
   if (!('IntersectionObserver' in window)) {

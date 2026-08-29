@@ -250,12 +250,43 @@ a.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(160,120,90
 .person .role{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-2); margin:4px 0 10px; }
 .person p{ margin:0; font-size:16px; color:var(--ink-2); }
 
-/* ---------- Archive (BHP gallery) ---------- */
-.archive{
-  display:grid; gap:22px;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  margin-top:30px;
+/* ---------- Archive carousel (BHP gallery) ---------- */
+.carousel{ position:relative; margin-top:30px; }
+.car-track{
+  position:relative;
+  display:flex; gap:22px;
+  overflow-x:auto; overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory; scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
 }
+.car-track::-webkit-scrollbar{ display:none; }
+.car-track:focus-visible{ outline:2px solid var(--gold); outline-offset:6px; border-radius:22px; }
+.slide{ flex:0 0 100%; scroll-snap-align:center; }
+
+.car-btn{
+  position:absolute; top:34%; transform:translateY(-50%);
+  width:46px; height:46px; border-radius:50%; padding:0;
+  background:var(--cream); border:1px solid var(--gold-soft);
+  cursor:pointer; z-index:2;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 14px rgba(160,120,90,.2);
+  transition:.2s;
+}
+.car-btn svg{ width:18px; height:18px; }
+.car-btn:hover{ background:var(--pink-2); border-color:var(--pink-deep); }
+.car-btn:disabled{ opacity:.3; cursor:default; box-shadow:none; }
+.car-btn.prev{ left:-16px; }
+.car-btn.next{ right:-16px; }
+
+.car-dots{ display:flex; gap:11px; justify-content:center; margin-top:20px; }
+.car-dots button{
+  width:9px; height:9px; padding:0; border-radius:50%;
+  border:1px solid var(--gold); background:transparent;
+  cursor:pointer; transition:.2s;
+}
+.car-dots button[aria-selected="true"]{ background:var(--gold); transform:scale(1.25); }
+
 .arch{
   background:var(--cream-2);
   border:1px solid var(--gold-soft);
@@ -263,7 +294,7 @@ a.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(160,120,90
   display:flex; flex-direction:column;
 }
 .arch img{
-  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
   border-bottom:1px solid var(--gold-soft);
 }
 .arch-body{ padding:22px 24px 26px; display:flex; flex-direction:column; gap:8px; }
@@ -344,6 +375,8 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .brandmark .seal{ height:50px; }
   .row{ flex-wrap:wrap; gap:4px 14px; }
   .row a, .row b{ font-size:19px; }
+  .arch img{ aspect-ratio:4/3; }
+  .car-btn{ display:none; }
 }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }

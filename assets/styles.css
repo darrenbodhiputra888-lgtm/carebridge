@@ -49,7 +49,7 @@ body{
   background-image:url("pattern.svg");
   background-size:260px 260px;
   /* Fallback: self-dismisses even if the script never runs. */
-  animation:loaderFallback 0s linear 4s forwards;
+  animation:loaderFallback 0s linear 5.5s forwards;
 }
 #loader.done{
   opacity:0; visibility:hidden;
@@ -102,7 +102,7 @@ body{
 .load-bar span{
   display:block; height:100%; width:4%;
   background:linear-gradient(90deg, var(--pink-deep), var(--gold));
-  animation:loadFill 2.1s ease-out forwards;
+  animation:loadFill 2.9s ease-out forwards;
 }
 @keyframes loadFill{ 0%{ width:4%; } 55%{ width:70%; } 100%{ width:100%; } }
 .load-foot{

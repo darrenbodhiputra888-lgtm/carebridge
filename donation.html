@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contribute — CareBridge</title>
-<meta name="description" content="Give your time, your skills or your support to CareBridge.">
+<!-- Stops iOS Safari turning the account number into a phone link. -->
+<meta name="format-detection" content="telephone=no">
+<title>Open Donation — CareBridge</title>
+<meta name="description" content="Support CareBridge projects with a donation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
@@ -29,8 +31,8 @@
     </header>
 
     <section class="section-head" style="margin-top:34px">
-      <p class="kicker">07 &nbsp;&middot;&nbsp; Stand With Us</p>
-      <h2 style="font-size:clamp(40px,6vw,72px)">Contribute</h2>
+      <p class="kicker">Contribute</p>
+      <h2 style="font-size:clamp(40px,6vw,72px)">Open Donation</h2>
       <p class="tagline">Every form of care counts</p>
     </section>
 
@@ -44,37 +46,17 @@
     </svg>
 
     <section class="section-head" style="margin-top:12px">
-      <p>There's no one way to support CareBridge. Your time, skills, supplies or funds
-         can all help move a project forward. Give what you can, in the way that works
-         for you.</p>
+      <p>Every contribution goes straight into running our projects. Transfers can be
+         made to the account below.</p>
     </section>
 
-    <section class="grid">
-
-      <a class="card" href="donation.html">
-        <div class="num">Give Goods</div>
-        <h3>Donate in Kind</h3>
-        <p>Books, learning materials, food, equipment or venue space. We publish what
-           was received and where it went.</p>
-        <div class="go">Arrange a donation &rarr;</div>
-      </a>
-
-      <a class="card" href="events.html">
-        <div class="num">Give Time</div>
-        <h3>Volunteer</h3>
-        <p>Give your time and take part in CareBridge projects, events and activities.
-           There's always a way to get involved and help out!</p>
-        <div class="go">Join us now &rarr;</div>
-      </a>
-
-      <a class="card" href="contact.html">
-        <div class="num">Give Skill</div>
-        <h3>Join the Team</h3>
-        <p>Be part of the team behind CareBridge. Help organise initiatives, design, or
-           bring your own skills to the table!</p>
-        <div class="go">Tell us what you do &rarr;</div>
-      </a>
-
+    <section class="donate">
+      <div class="donate-card">
+        <span class="tag">Bank Central Asia</span>
+        <div class="acct" id="acctNo">1513132011</div>
+        <div class="acct-name">a.n. Sierra Kererein Asscabella</div>
+        <button class="btn" type="button" id="copyAcct">Copy account number</button>
+      </div>
     </section>
 
     <hr class="rule">
@@ -91,11 +73,11 @@
     <p class="pull">Give what you have. It is always more useful than you think.</p>
 
     <div class="btn-row">
-      <a class="btn" href="contact.html">Get in Touch</a>
-      <a class="btn gold" href="events.html">Volunteer Instead</a>
+      <a class="btn gold" href="contact.html">Get in Touch</a>
+      <a class="btn blue" href="events.html">Volunteer Instead</a>
     </div>
 
-    <div style="text-align:center"><a class="backlink" href="community.html">&larr; Back to Community</a></div>
+    <div style="text-align:center"><a class="backlink" href="contribute.html">&larr; Back to Contribute</a></div>
 
   </div>
 
@@ -114,6 +96,45 @@
     <small>&copy; 2026 CareBridge. Bridging Care Into Action</small>
   </footer>
 </div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copyAcct');
+  var num = document.getElementById('acctNo');
+  if (!btn || !num) return;
+
+  var label = btn.textContent;
+  function flash(msg) {
+    btn.textContent = msg;
+    setTimeout(function () { btn.textContent = label; }, 1900);
+  }
+
+  function fallback(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); flash('Copied'); }
+    catch (e) { flash('Press and hold to copy'); }
+    document.body.removeChild(ta);
+  }
+
+  btn.addEventListener('click', function () {
+    var text = num.textContent.replace(/\s/g, '');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { flash('Copied'); },
+        function () { fallback(text); }
+      );
+    } else {
+      fallback(text);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

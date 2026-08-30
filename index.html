@@ -16,7 +16,7 @@
 <div id="loader" aria-hidden="true">
   <div class="load-card">
     <img class="load-mark" src="assets/logo-mark.png" alt="">
-    <div class="load-pill"><span class="load-spin"></span>Preparing the bridge</div>
+    <div class="load-pill"><span class="load-spin"></span>Please Wait a Moment</div>
     <div class="load-word">CareBridge</div>
     <div class="load-script">Bridging Care Into Action</div>
     <div class="load-bar"><span></span></div>
@@ -199,7 +199,7 @@
   var start = Date.now();
 
   function finish() {
-    var wait = Math.max(0, 1500 - (Date.now() - start));
+    var wait = Math.max(0, 3000 - (Date.now() - start));
     setTimeout(function () {
       el.className = 'done';
       try { sessionStorage.setItem('cb-seen-loader', '1'); } catch (e) {}

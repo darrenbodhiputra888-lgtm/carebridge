@@ -13,6 +13,17 @@
 </head>
 <body>
 
+<div id="loader" aria-hidden="true">
+  <div class="load-card">
+    <img class="load-mark" src="assets/logo-mark.png" alt="">
+    <div class="load-pill"><span class="load-spin"></span>Preparing the bridge</div>
+    <div class="load-word">CareBridge</div>
+    <div class="load-script">Bridging Care Into Action</div>
+    <div class="load-bar"><span></span></div>
+    <div class="load-foot">Loading &middot; Est. 2026</div>
+  </div>
+</div>
+
 <div class="shell">
   <div class="inner">
 
@@ -174,6 +185,32 @@
 </div>
 
 <script src="assets/count.js" defer></script>
+
+<script>
+(function () {
+  var el = document.getElementById('loader');
+  if (!el) return;
+
+  // Only show it on the first visit of a browsing session.
+  var seen = false;
+  try { seen = sessionStorage.getItem('cb-seen-loader') === '1'; } catch (e) {}
+  if (seen) { if (el.parentNode) el.parentNode.removeChild(el); return; }
+
+  var start = Date.now();
+
+  function finish() {
+    var wait = Math.max(0, 1500 - (Date.now() - start));
+    setTimeout(function () {
+      el.className = 'done';
+      try { sessionStorage.setItem('cb-seen-loader', '1'); } catch (e) {}
+      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 700);
+    }, wait);
+  }
+
+  if (document.readyState === 'complete') finish();
+  else window.addEventListener('load', finish);
+})();
+</script>
 
 </body>
 </html>

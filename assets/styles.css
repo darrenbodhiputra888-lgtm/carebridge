@@ -41,6 +41,79 @@ body{
   background-size:260px 260px;
 }
 
+/* ---------- Loading screen ---------- */
+#loader{
+  position:fixed; inset:0; z-index:999;
+  display:flex; align-items:center; justify-content:center;
+  background-color:#F7D9E3;
+  background-image:url("pattern.svg");
+  background-size:260px 260px;
+  /* Fallback: self-dismisses even if the script never runs. */
+  animation:loaderFallback 0s linear 4s forwards;
+}
+#loader.done{
+  opacity:0; visibility:hidden;
+  transition:opacity .6s ease, visibility 0s .6s;
+}
+@keyframes loaderFallback{ to{ opacity:0; visibility:hidden; } }
+
+.load-card{
+  width:min(86vw, 420px);
+  background:var(--cream);
+  border:1px solid var(--gold-soft);
+  border-radius:26px;
+  box-shadow:0 24px 60px rgba(150,95,110,.24);
+  padding:36px 30px 30px;
+  text-align:center;
+  position:relative;
+}
+.load-card::after{
+  content:""; position:absolute; inset:9px;
+  border:1px solid var(--gold-soft); border-radius:18px;
+  opacity:.6; pointer-events:none;
+}
+.load-mark{ width:92px; height:auto; display:block; margin:0 auto 14px; }
+.load-pill{
+  display:inline-flex; align-items:center; gap:9px;
+  border:1px solid var(--gold-soft); border-radius:999px;
+  padding:6px 16px; margin-bottom:16px;
+  font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--ink-2);
+}
+.load-spin{
+  width:11px; height:11px; border-radius:50%; flex:none;
+  border:1.5px solid var(--gold-soft); border-top-color:var(--gold-deep);
+  animation:loadSpin .9s linear infinite;
+}
+@keyframes loadSpin{ to{ transform:rotate(360deg); } }
+.load-word{
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(36px,10vw,50px); line-height:1;
+  letter-spacing:.04em; color:var(--gold-deep);
+}
+.load-script{
+  font-family:var(--script); font-size:21px;
+  color:var(--gold); margin:5px 0 22px;
+}
+.load-bar{
+  height:9px; border-radius:999px; overflow:hidden;
+  border:1px solid var(--gold-soft); background:var(--cream-2);
+}
+.load-bar span{
+  display:block; height:100%; width:4%;
+  background:linear-gradient(90deg, var(--pink-deep), var(--gold));
+  animation:loadFill 2.1s ease-out forwards;
+}
+@keyframes loadFill{ 0%{ width:4%; } 55%{ width:70%; } 100%{ width:100%; } }
+.load-foot{
+  font-size:10px; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--ink-2); margin-top:14px;
+}
+@media (prefers-reduced-motion: reduce){
+  .load-spin{ animation:none; }
+  .load-bar span{ animation:none; width:100%; }
+}
+
 /* ---------- Page shell (the cream "screen") ---------- */
 .shell{
   max-width:var(--maxw);

@@ -79,6 +79,23 @@
 
     <hr class="rule">
 
+    <section class="section-head">
+      <h2>Open Donation</h2>
+      <p>Every contribution goes straight into running our projects. Transfers can be
+         made to the account below.</p>
+    </section>
+
+    <section class="donate">
+      <div class="donate-card">
+        <span class="tag">Bank Central Asia</span>
+        <div class="acct" id="acctNo">1513132011</div>
+        <div class="acct-name">a.n. Sierra Kererein Asscabella</div>
+        <button class="btn" type="button" id="copyAcct">Copy account number</button>
+      </div>
+    </section>
+
+    <hr class="rule">
+
     <section class="prose">
       <h3>Where Contributions Go</h3>
       <p>Everything given to CareBridge helps us run our initiatives, from materials and
@@ -114,6 +131,45 @@
     <small>&copy; 2026 CareBridge. Bridging Care Into Action</small>
   </footer>
 </div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copyAcct');
+  var num = document.getElementById('acctNo');
+  if (!btn || !num) return;
+
+  var label = btn.textContent;
+  function flash(msg) {
+    btn.textContent = msg;
+    setTimeout(function () { btn.textContent = label; }, 1900);
+  }
+
+  function fallback(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); flash('Copied'); }
+    catch (e) { flash('Press and hold to copy'); }
+    document.body.removeChild(ta);
+  }
+
+  btn.addEventListener('click', function () {
+    var text = num.textContent.replace(/\s/g, '');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { flash('Copied'); },
+        function () { fallback(text); }
+      );
+    } else {
+      fallback(text);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

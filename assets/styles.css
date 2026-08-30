@@ -403,6 +403,31 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   padding:3px 12px; color:var(--ink-2); margin-bottom:8px;
 }
 
+/* ---------- Donation card ---------- */
+.donate{ display:flex; justify-content:center; margin-top:30px; }
+.donate-card{
+  width:min(100%, 460px); text-align:center; position:relative;
+  background:var(--cream-2); border:1px solid var(--gold-soft);
+  border-radius:22px; padding:32px 30px 30px;
+}
+.donate-card::after{
+  content:""; position:absolute; inset:8px;
+  border:1px solid var(--gold-soft); border-radius:15px;
+  opacity:.55; pointer-events:none;
+}
+.donate-card .tag{ margin-bottom:18px; }
+.acct{
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(30px,7vw,42px); line-height:1;
+  letter-spacing:.09em; color:var(--gold-deep);
+  font-variant-numeric:tabular-nums;
+}
+.acct-name{
+  font-size:12px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ink-2); margin:14px 0 22px;
+}
+button.btn{ font-family:var(--serif); cursor:pointer; }
+
 /* ---------- Contact rows ---------- */
 .rows{ max-width:720px; margin:28px auto 0; }
 .row{

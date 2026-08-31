@@ -404,26 +404,20 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 }
 
 /* ---------- Logo wall ---------- */
-.logos{
-  display:grid; gap:20px;
-  grid-template-columns:repeat(auto-fit, minmax(158px,1fr));
+.logo-wall{
   margin-top:30px;
-}
-.logo-tile{
   background:var(--cream-2);
   border:1px solid var(--gold-soft);
-  border-radius:20px;
-  padding:16px 14px 14px;
-  text-align:center;
+  border-radius:22px;
+  padding:30px 28px;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+  align-items:center;
 }
-.logo-tile img{
+.logo-wall img{
   width:100%; aspect-ratio:1/1; object-fit:contain;
-  display:block; border-radius:13px; background:#fff;
-}
-.logo-tile span{
-  display:block; margin-top:13px;
-  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-2); line-height:1.45;
+  display:block; border-radius:12px; background:#fff;
 }
 
 /* ---------- Donation card ---------- */
@@ -505,6 +499,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .row a, .row b{ font-size:19px; }
   .arch img{ aspect-ratio:4/3; }
   .car-btn{ display:none; }
+  .logo-wall{ grid-template-columns:repeat(2,1fr); gap:16px; padding:22px 20px; }
 }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }

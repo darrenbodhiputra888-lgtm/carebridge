@@ -403,6 +403,29 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   padding:3px 12px; color:var(--ink-2); margin-bottom:8px;
 }
 
+/* ---------- Logo wall ---------- */
+.logos{
+  display:grid; gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(158px,1fr));
+  margin-top:30px;
+}
+.logo-tile{
+  background:var(--cream-2);
+  border:1px solid var(--gold-soft);
+  border-radius:20px;
+  padding:16px 14px 14px;
+  text-align:center;
+}
+.logo-tile img{
+  width:100%; aspect-ratio:1/1; object-fit:contain;
+  display:block; border-radius:13px; background:#fff;
+}
+.logo-tile span{
+  display:block; margin-top:13px;
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-2); line-height:1.45;
+}
+
 /* ---------- Donation card ---------- */
 .donate{ display:flex; justify-content:center; margin-top:30px; }
 .donate-card{

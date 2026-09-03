@@ -416,8 +416,9 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   align-items:center;
 }
 .logo-wall img{
-  width:100%; aspect-ratio:1/1; object-fit:contain;
-  display:block; border-radius:12px; background:#fff;
+  width:100%; aspect-ratio:1/1; object-fit:cover;
+  display:block; border-radius:50%; background:#fff;
+  border:1px solid var(--gold-soft);
 }
 
 /* ---------- Donation card ---------- */

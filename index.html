@@ -44,6 +44,36 @@
       </nav>
     </header>
 
+    <!-- ===== Banner =====
+         EDIT ME: swap these three images for the CB WEBSITE BANNER artwork.
+         Add or remove <figure> blocks freely; the dots follow automatically. -->
+    <section class="banner" data-carousel data-autoplay="5000"
+             aria-roledescription="carousel" aria-label="CareBridge highlights">
+
+      <button class="car-btn prev" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#A57D46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+      </button>
+
+      <div class="car-track" tabindex="0" aria-live="polite">
+        <figure>
+          <img src="assets/bhp-01.jpg" alt="CareBridge members and partner volunteers at Panti Jompo Sumarah">
+        </figure>
+        <figure>
+          <img src="assets/bhp-02.jpg" alt="A CareBridge volunteer speaking to children at Panti Asuhan Al-Kahfi">
+        </figure>
+        <figure>
+          <img src="assets/bhp-03.jpg" alt="CareBridge volunteers and children outside Panti Asuhan Ya Ummi">
+        </figure>
+      </div>
+
+      <button class="car-btn next" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#A57D46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+      </button>
+
+      <div class="car-dots"></div>
+
+    </section>
+
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="hero-art" aria-hidden="true">
@@ -185,6 +215,7 @@
 </div>
 
 <script src="assets/count.js" defer></script>
+<script src="assets/carousel.js" defer></script>
 
 <script>
 (function () {

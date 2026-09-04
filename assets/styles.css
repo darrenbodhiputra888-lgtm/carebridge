@@ -461,6 +461,15 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 }
 .article h3:first-child{ margin-top:0; }
 .article p{ margin:0 0 15px; text-align:justify; }
+.article figure{ margin:4px 0 20px; break-inside:avoid; }
+.article figure img{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+  border-radius:14px; border:1px solid var(--gold-soft); display:block;
+}
+.article figcaption{
+  margin-top:9px; text-align:center;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2);
+}
 .article .lede::first-letter{
   float:left; font-family:var(--display);
   font-size:62px; line-height:.82; padding:5px 9px 0 0;

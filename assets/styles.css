@@ -416,7 +416,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 .banner .car-track:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
 .banner figure{ flex:0 0 100%; scroll-snap-align:center; margin:0; }
 .banner img{
-  width:100%; aspect-ratio:21/9; object-fit:cover; display:block;
+  width:100%; aspect-ratio:2/1; object-fit:cover; display:block;
 }
 .banner .car-btn{ top:50%; }
 .banner .car-btn.prev{ left:14px; }
@@ -637,7 +637,6 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .row a, .row b{ font-size:19px; }
   .arch img{ aspect-ratio:4/3; }
   .car-btn{ display:none; }
-  .banner img{ aspect-ratio:3/2; }
   .logo-wall{ grid-template-columns:repeat(2,1fr); gap:16px; padding:22px 20px; }
   .article p{ text-align:left; }
   .article .gallery{ grid-template-columns:1fr; gap:20px; }

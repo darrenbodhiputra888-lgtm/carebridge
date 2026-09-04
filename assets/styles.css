@@ -167,7 +167,7 @@ nav.mainnav a:hover, nav.mainnav a[aria-current="page"]{
 .hero{
   display:grid; grid-template-columns:1fr minmax(300px,620px) 1fr;
   align-items:center; gap:20px;
-  padding:30px 0 6px; text-align:center;
+  padding:10px 0 6px; text-align:center;
 }
 .hero-art{ display:flex; justify-content:center; }
 .hero-art svg{ width:100%; max-width:270px; height:auto; }
@@ -185,12 +185,12 @@ h1.wordmark{
   font-family:var(--script);
   font-size:clamp(28px, 4.2vw, 46px);
   color:var(--gold);
-  margin:8px 0 0;
-  line-height:1.2;
+  margin:2px 0 0;
+  line-height:1.15;
 }
 .kicker{
   font-size:12px; letter-spacing:.34em; text-transform:uppercase;
-  color:var(--ink-2); margin:0 0 14px;
+  color:var(--ink-2); margin:0 0 8px;
 }
 
 /* ---------- Buttons ---------- */
@@ -210,7 +210,7 @@ h1.wordmark{
 .btn.gold:hover{ background:var(--gold-soft); }
 .btn.blue{ background:#EAF2FA; border-color:var(--blue-deep); box-shadow:0 3px 0 rgba(156,186,217,.4); }
 .btn.blue:hover{ background:var(--blue); }
-.btn-row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
+.btn-row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:16px; }
 
 /* ---------- Rules & section heads ---------- */
 .rule{ border:0; height:1px; background:var(--gold-soft); margin:44px 0; opacity:.9; }

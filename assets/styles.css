@@ -403,6 +403,32 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   padding:3px 12px; color:var(--ink-2); margin-bottom:8px;
 }
 
+/* ---------- UN SDG blocks ---------- */
+.sdg{
+  display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fit, minmax(290px,1fr));
+  margin-top:28px;
+}
+.sdg-item{
+  background:var(--cream-2); border:1px solid var(--gold-soft);
+  border-radius:20px; padding:24px 22px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.sdg-item h4{
+  font-family:var(--display); font-weight:400; font-size:27px;
+  color:var(--gold-deep); margin:0; letter-spacing:.02em; line-height:1.2;
+}
+.video-slot{
+  aspect-ratio:16/9; margin-top:2px;
+  border:1px dashed var(--gold-soft); border-radius:14px;
+  background:var(--cream);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:11px;
+}
+.video-slot svg{ width:46px; height:46px; }
+.video-slot span{
+  font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-2);
+}
+
 /* ---------- Blog index (newspaper listing) ---------- */
 .post-list{
   max-width:820px; margin:30px auto 0;

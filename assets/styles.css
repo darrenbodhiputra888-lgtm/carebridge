@@ -487,6 +487,16 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 }
 .article h3:first-child{ margin-top:0; }
 .article p{ margin:0 0 15px; text-align:justify; }
+.standfirst{
+  text-align:center; max-width:700px; margin:16px auto 0;
+  font-size:19px; font-style:italic; color:var(--ink-2); line-height:1.5;
+}
+.article .gallery{
+  column-span:all;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+  margin:16px 0 24px;
+}
+.article .gallery figure{ margin:0; }
 .article figure{ margin:4px 0 20px; break-inside:avoid; }
 .article figure img{
   width:100%; aspect-ratio:4/3; object-fit:cover;
@@ -609,6 +619,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .car-btn{ display:none; }
   .logo-wall{ grid-template-columns:repeat(2,1fr); gap:16px; padding:22px 20px; }
   .article p{ text-align:left; }
+  .article .gallery{ grid-template-columns:1fr; gap:20px; }
 }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }

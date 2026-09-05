@@ -407,8 +407,15 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   padding:3px 12px; color:var(--ink-2); margin-bottom:8px;
 }
 
-/* ---------- Home hero banner ---------- */
-.banner{ position:relative; margin:0 auto 22px; max-width:660px; }
+/* ---------- Home hero banner ----------
+   Full-bleed across the card and flush with its top edge, the way the
+   Lovepink hero spans the page. The card's own overflow:hidden rounds
+   the top corners for us. */
+.banner{
+  position:relative;
+  margin:-34px -46px 24px;
+  max-width:none;
+}
 .banner .car-track{
   display:flex; gap:0; overflow-x:auto;
   scroll-snap-type:x mandatory; scroll-behavior:smooth;
@@ -423,9 +430,19 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   width:100%; height:auto; aspect-ratio:2/1; object-fit:cover; display:block;
 }
 .banner .car-btn{ top:50%; }
-.banner .car-btn.prev{ left:14px; }
-.banner .car-btn.next{ right:14px; }
-.banner .car-dots{ margin-top:10px; }
+.banner .car-btn.prev{ left:18px; }
+.banner .car-btn.next{ right:18px; }
+/* Dots sit on the artwork, bottom centre */
+.banner .car-dots{
+  position:absolute; left:0; right:0; bottom:16px;
+  margin:0; z-index:2;
+}
+.banner .car-dots button{
+  width:10px; height:10px;
+  border-color:#fff; background:rgba(255,255,255,.42);
+  box-shadow:0 1px 4px rgba(120,80,60,.35);
+}
+.banner .car-dots button[aria-selected="true"]{ background:#fff; }
 
 /* ---------- UN SDG blocks ---------- */
 .sdg{
@@ -645,7 +662,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
   .inner{ padding:26px 24px 44px; }
-  .banner{ margin:0 auto 18px; }
+  .banner{ margin:-26px -24px 20px; }
   .hero{ grid-template-columns:1fr; }
   .hero-art{ display:none; }
   .trio{ grid-template-columns:1fr; }

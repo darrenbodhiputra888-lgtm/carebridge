@@ -455,11 +455,18 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   border-top:1px solid var(--gold-soft);
 }
 .post-list a{
-  display:block; text-decoration:none; color:inherit;
+  display:grid; grid-template-columns:230px minmax(0,1fr);
+  gap:26px; align-items:center;
+  text-decoration:none; color:inherit;
   padding:24px 6px; border-bottom:1px solid var(--gold-soft);
   transition:.2s;
 }
 .post-list a:hover{ background:var(--cream-2); }
+.post-list img{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+  border-radius:14px; border:1px solid var(--gold-soft); display:block;
+}
+.post-list .lead{ font-size:17px; color:var(--ink-2); margin:9px 0 0; }
 .post-list .date{
   display:block; margin-bottom:9px;
   font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-2);
@@ -531,6 +538,17 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   font-size:62px; line-height:.82; padding:5px 9px 0 0;
   color:var(--gold-deep);
 }
+/* Photo spreads: the picture alternates left and right down the page */
+.spread{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:34px; align-items:center;
+  padding:26px 0; border-top:1px solid var(--gold-soft);
+}
+.spread figure{ margin:0; }
+.spread.flip figure{ order:2; }
+.spread .spread-body h3{ margin-top:0; }
+.spread .spread-body p:last-child{ margin-bottom:0; }
+
 @media (min-width:900px){
   .article-body{
     columns:2; column-gap:46px;
@@ -641,6 +659,9 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
   .logo-wall{ grid-template-columns:repeat(2,1fr); gap:16px; padding:22px 20px; }
   .article p{ text-align:left; }
   .article .gallery{ grid-template-columns:1fr; gap:20px; }
+  .spread{ grid-template-columns:1fr; gap:18px; padding:20px 0; }
+  .spread.flip figure{ order:0; }
+  .post-list a{ grid-template-columns:1fr; gap:14px; }
 }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }

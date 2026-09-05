@@ -29,6 +29,10 @@
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 
+/* width/height attributes on <img> are presentational hints, so without
+   this a sized image ignores its aspect-ratio and stays 900-odd px tall. */
+img{ max-width:100%; height:auto; }
+
 body{
   margin:0;
   min-height:100vh;

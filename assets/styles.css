@@ -527,6 +527,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
   margin:16px 0 24px;
 }
+.article .gallery.two{ grid-template-columns:repeat(2,1fr); }
 .article .gallery figure{ margin:0; }
 .article figure{ margin:4px 0 20px; break-inside:avoid; }
 .article figure img{
@@ -551,6 +552,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 .spread figure{ margin:0; }
 .spread.flip{ grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); }
 .spread.flip figure{ order:2; }
+.spread.opening{ border-top:0; padding-top:10px; }
 .spread .spread-body h3{ margin-top:0; }
 .spread .spread-body p:last-child{ margin-bottom:0; }
 

@@ -408,7 +408,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 }
 
 /* ---------- Home hero banner ---------- */
-.banner{ position:relative; margin:14px auto 0; max-width:660px; }
+.banner{ position:relative; margin:0 auto 22px; max-width:660px; }
 .banner .car-track{
   display:flex; gap:0; overflow-x:auto;
   scroll-snap-type:x mandatory; scroll-behavior:smooth;
@@ -645,7 +645,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
   .inner{ padding:26px 24px 44px; }
-  .banner{ margin:12px auto 0; }
+  .banner{ margin:0 auto 18px; }
   .hero{ grid-template-columns:1fr; }
   .hero-art{ display:none; }
   .trio{ grid-template-columns:1fr; }

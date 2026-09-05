@@ -404,7 +404,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 }
 
 /* ---------- Home hero banner ---------- */
-.banner{ position:relative; margin:18px -46px 0; max-width:none; }
+.banner{ position:relative; margin:14px auto 0; max-width:660px; }
 .banner .car-track{
   display:flex; gap:0; overflow-x:auto;
   scroll-snap-type:x mandatory; scroll-behavior:smooth;
@@ -421,7 +421,7 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 .banner .car-btn{ top:50%; }
 .banner .car-btn.prev{ left:14px; }
 .banner .car-btn.next{ right:14px; }
-.banner .car-dots{ margin-top:16px; }
+.banner .car-dots{ margin-top:10px; }
 
 /* ---------- UN SDG blocks ---------- */
 .sdg{
@@ -621,7 +621,7 @@ footer.foot small{ font-size:11px; letter-spacing:.2em; text-transform:uppercase
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
   .inner{ padding:26px 24px 44px; }
-  .banner{ margin:14px -24px 0; }
+  .banner{ margin:12px auto 0; }
   .hero{ grid-template-columns:1fr; }
   .hero-art{ display:none; }
   .trio{ grid-template-columns:1fr; }

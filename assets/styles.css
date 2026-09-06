@@ -216,6 +216,30 @@ h1.wordmark{
 .btn.blue:hover{ background:var(--blue); }
 .btn-row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
 
+/* Pressed state: the button sinks onto its own shadow. */
+.btn:active{ transform:translateY(2px); box-shadow:0 1px 0 rgba(230,166,191,.45); }
+.btn.gold:active{ box-shadow:0 1px 0 rgba(199,162,107,.4); }
+.btn.blue:active{ box-shadow:0 1px 0 rgba(156,186,217,.4); }
+
+/* ---------- Splash on press ---------- */
+.btn, .car-btn, .copy-btn, .logo-wall a, .go{ position:relative; overflow:hidden; }
+.ripple{
+  position:absolute; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.7) 0%, rgba(230,166,191,.38) 55%, rgba(199,162,107,0) 72%);
+  transform:scale(0); opacity:.55;
+  pointer-events:none; z-index:0;
+  animation:rippleOut .62s ease-out forwards;
+}
+@keyframes rippleOut{
+  to{ transform:scale(1); opacity:0; }
+}
+
+/* Keyboard users get the same affordances as mouse users. */
+.btn:focus-visible, .car-btn:focus-visible, .card:focus-visible,
+.trio > a:focus-visible, .post-list a:focus-visible, .logo-wall a:focus-visible{
+  outline:2px solid var(--gold); outline-offset:3px;
+}
+
 /* ---------- Rules & section heads ---------- */
 .rule{ border:0; height:1px; background:var(--gold-soft); margin:44px 0; opacity:.9; }
 .ornament{ display:block; margin:0 auto; width:200px; height:auto; opacity:.85; }

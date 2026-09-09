@@ -1,5 +1,5 @@
 /* Loading screen between pages.
-   Any link marked data-loading shows a spinner for three seconds, then
+   Any link marked data-loading shows a spinner briefly, then
    goes. Skipped for new-tab clicks, modifier clicks, and for anyone who
    has asked for reduced motion — they just follow the link straight away. */
 (function () {

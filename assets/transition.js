@@ -32,7 +32,11 @@
     document.body.appendChild(wrap);
 
     // Next frame, so the fade-in has a starting point to animate from.
-    requestAnimationFrame(function () { wrap.classList.add('on'); });
+    // rAF is throttled in hidden tabs, so back it with a timer: whichever
+    // fires first reveals the overlay, and the second call is a no-op.
+    function show() { wrap.classList.add('on'); }
+    requestAnimationFrame(show);
+    setTimeout(show, 40);
     return wrap;
   }
 

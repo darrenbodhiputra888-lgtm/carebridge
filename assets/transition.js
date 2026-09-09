@@ -3,7 +3,7 @@
    goes. Skipped for new-tab clicks, modifier clicks, and for anyone who
    has asked for reduced motion — they just follow the link straight away. */
 (function () {
-  var HOLD = 3000;
+  var HOLD = 1500;
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function build() {

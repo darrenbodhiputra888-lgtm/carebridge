@@ -118,6 +118,37 @@ body{
   .load-bar span{ animation:none; width:100%; }
 }
 
+/* ---------- Between-page loading screen ---------- */
+.route-loader{
+  position:fixed; inset:0; z-index:1000;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background-color:#F7D9E3;
+  background-image:url("pattern.svg");
+  background-size:260px 260px;
+  opacity:0; transition:opacity .25s ease;
+}
+.route-loader.on{ opacity:1; }
+.spinner{ position:relative; width:104px; height:104px; }
+.spinner i{
+  position:absolute; left:50%; top:50%;
+  width:10px; height:27px; margin:-46px 0 0 -5px;
+  border-radius:6px; background:var(--gold-deep);
+  transform-origin:50% 46px;
+  animation:spinFade 1.2s linear infinite;
+}
+@keyframes spinFade{
+  0%{   opacity:1; }
+  100%{ opacity:.12; }
+}
+.route-word{
+  margin-top:30px;
+  font-size:13px; letter-spacing:.42em; text-transform:uppercase;
+  color:var(--ink-2);
+}
+@media (prefers-reduced-motion: reduce){
+  .spinner i{ animation:none; opacity:.55; }
+}
+
 /* ---------- Page shell (the cream "screen") ---------- */
 .shell{
   max-width:var(--maxw);

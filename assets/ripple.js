@@ -53,6 +53,7 @@
 
     var a = e.target.closest && e.target.closest('a.btn');
     if (!a || a.dataset.splashing) return;
+    if (a.hasAttribute('data-loading')) return;          // the loading screen owns this one
     if (a.target && a.target !== '_self') return;        // new tab: leave alone
 
     var href = a.getAttribute('href');

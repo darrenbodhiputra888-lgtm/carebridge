@@ -441,6 +441,9 @@ a.avatar:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
   border-radius:20px; overflow:hidden;
   display:flex; flex-direction:column;
 }
+/* .fit is for artwork that must not be cropped — a poster, say — so it
+   sits whole on a cream ground instead of filling the frame. */
+.arch img.fit{ object-fit:contain; background:var(--cream-3); }
 .arch img{
   width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
   border-bottom:1px solid var(--gold-soft);
